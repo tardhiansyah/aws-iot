@@ -1,5 +1,6 @@
 # _Udemy AWS IoT Project_
-My first journey learning ESP-IDF. Following this awesome tutorial: https://www.udemy.com/course/iot-application-development-with-the-esp32-using-the-esp-idf/
+My first journey learning ESP-IDF. 
+Learning from this awesome tutorial: https://www.udemy.com/course/iot-application-development-with-the-esp32-using-the-esp-idf/
 
 ##  folder contents
 ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
