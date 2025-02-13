@@ -17,7 +17,7 @@
 ledc_info_t ledc_ch[RGB_LED_CHANNEL_NUM];
 
 // handle RGB LED initialization
-bool g_rgb_led_initialized = false;
+static bool s_rgb_led_initialized = false;
 
 /**
  * @brief Initiialize the RGB LED settings per channel, including
@@ -66,7 +66,7 @@ static void rgb_led_pwm_init(void) {
         ledc_channel_config(&ledc_channel);
     }
 
-    g_rgb_led_initialized = true;
+    s_rgb_led_initialized = true;
 }
 
 /**
@@ -90,7 +90,7 @@ static void rgb_led_set_color(uint8_t red, uint8_t green, uint8_t blue) {
 }
 
 void rgb_led_wifi_app_started(void) {
-    if (!g_rgb_led_initialized) {
+    if (!s_rgb_led_initialized) {
         rgb_led_pwm_init();
     }
 
@@ -98,7 +98,7 @@ void rgb_led_wifi_app_started(void) {
 }
 
 void rgb_led_http_server_started(void) {
-    if (!g_rgb_led_initialized) {
+    if (!s_rgb_led_initialized) {
         rgb_led_pwm_init();
     }
 
@@ -106,7 +106,7 @@ void rgb_led_http_server_started(void) {
 }
 
 void rgb_led_wifi_connected(void) {
-    if (!g_rgb_led_initialized) {
+    if (!s_rgb_led_initialized) {
         rgb_led_pwm_init();
     }
 

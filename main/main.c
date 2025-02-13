@@ -11,7 +11,11 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
+#if defined(CONFIG_IDF_TARGET_ESP32C6)
+#include "rgb_led_strip.h"
+#else
 #include "rgb_led.h"
+#endif
 
 void app_main(void)
 {
